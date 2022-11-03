@@ -34,8 +34,10 @@ const Register = () => {
           <input onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" id='lastName' placeholder='Enter Your Last Name' required/>
         </div>
 
+        <div className="mb-3"> 
           <label htmlFor="email" className='form-label'>Email</label>
           <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id='email' placeholder='Enter Your Email' required/>
+        </div>
 
         <div className="mb-3"> 
           <label htmlFor="password" className='form-label'>Password</label>
