@@ -4,12 +4,10 @@ const Login = () => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
-  //submit olduğunda input değerlerini yakalamak için kullandığım function
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // formumuzdan değerleri yakalayabildiğimizi kontrol ediyoruz, consoleye basıyoruz
-    // sonrasında bu backende yani firebaseye göndereceğiz.
-    // console.log(firstName, lastName)
+  //submit olduğunda login input değerlerini yakalamak için kullandığım function
+  const handleLogin = (e) => {
+    e.preventDefault() 
+    console.log(email, password)
   }
 
   return (
@@ -19,8 +17,8 @@ const Login = () => {
       </div>
       <div className="register-form">
         
-        <h1 className="form-title display-3">Register</h1>
-        <form id="register" onSubmit={handleSubmit}>
+        <h1 className="form-title display-3">Login</h1>
+        <form id="register" onSubmit={handleLogin}>
 
         <div className="mb-3"> 
           <label htmlFor="email" className='form-label'>Email</label>
@@ -32,11 +30,15 @@ const Login = () => {
           <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id='password' placeholder='Enter Your Password' required/>
         </div>
 
+        <div className="link">Forgat Password</div>
+
         <div className="mb-3">
-          <input type="submit" className='btn btn-primary form-control' value="Register" />
+          <input type="submit" className='btn btn-primary form-control' value="Login" />
         </div>
 
         </form>
+
+        <div className="btn btn-primary form-control"> Continue with Google </div>
 
       </div>
     </div>
