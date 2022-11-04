@@ -43,12 +43,17 @@ const auth = getAuth(app);
 // içerisinde bir fn oluşturacağuz ve email, password parametreleri göndereceğiz.
 // sonrada kullanmak istediğim yerde bu fni çağıracağız.
 // NOT başka yerde kullanmam için bu fni export etmeliyim
-export const createUser = async (email, password) => {
+export const createUser = async (email, password, navigate) => {
   // yeni kullanıcı oluşturmak için firebase hazır methodu
   try {
     let userCredential = await createUserWithEmailAndPassword(auth, email, password)
     console.log(userCredential)
+    navigate("/")
   } catch (error) {
     console.log(error)
   }
 }
+
+
+
+//SIGN IN USER

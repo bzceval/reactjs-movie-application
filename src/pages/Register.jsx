@@ -1,11 +1,13 @@
 import {useState} from 'react'
 import { createUser } from '../auth/firebase'
+import { useNavigate} from "react-router-dom"
 
 const Register = () => {
   const [firstName, setFirstName] = useState()
   const [lastName, setLastName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const navigate = useNavigate()
 
   //submit olduğunda input değerlerini yakalamak için kullandığım function
   const handleSubmit = (e) => {
@@ -14,8 +16,8 @@ const Register = () => {
     // sonrasında bu backende yani firebaseye göndereceğiz.
     // console.log(firstName, lastName)
     // firebase signin new users method import
-    createUser(email, password)
-    
+    createUser(email, password, navigate)
+    // navigate("/")
   }
 
   return (
