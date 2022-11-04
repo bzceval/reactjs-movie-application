@@ -14,6 +14,7 @@ const Register = () => {
     // sonrasında bu backende yani firebaseye göndereceğiz.
     // console.log(firstName, lastName)
     // firebase signin new users method import
+    createUser(email, password)
     
   }
 
