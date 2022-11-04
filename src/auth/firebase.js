@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-//SIGN UP NEW USER
+//SIGN UP NEW USER === REGISTER
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 // bu method yeni bir kullanıcı oluşturur.
@@ -56,4 +56,14 @@ export const createUser = async (email, password, navigate) => {
 
 
 
-//SIGN IN USER
+//SIGN IN USER === LOGIN
+export const signIn = async (email, password, navigate) => {
+  //mevcut kullanıcının giriş yapması için kullanılan firebase methodu
+  try {
+    let userCredential = await signInWithEmailAndPassword(auth, email, password) 
+    console.log(userCredential)
+    navigate("/")
+  } catch (error) {
+    console.log(error)
+  }
+}
