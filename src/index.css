@@ -86,21 +86,24 @@ body {
 
 .navbar {
   padding: 1rem 3rem;
-  background-color: #0d47a1 !important;
+  background-color: #DB5461 !important; 
 }
 
-.form-image {
-  min-width: 800px;
-  min-height: 800px;
-}
+.navbar h3 {
+  color: #F4EBE8;
+} 
 
 .register-form {
   flex: 1;
-  background-color: #eeeeee;
-  color: #000000;
-  padding: 5rem;
+  background-color: #EFEAD8;
+  color: #DB5461;
+  padding: 2rem;
 }
-
+.btn-dark {
+  background-color: #DB5461 !important;
+  border: none !important;
+  font-size: 1.3rem !important; 
+}
 .form-title {
   text-align: center;
   margin-bottom: 3rem;
@@ -108,13 +111,14 @@ body {
 
 .form-label {
   padding-left: 1.5rem;
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
   font-size: 1.5rem;
 }
 
 .form-control {
-  width: 90%;
-  margin: 20px;
+  width: 90% !important;
+  margin: 10px 20px;
+  font-size: .9rem !important;
 }
 
 .btn-primary {
@@ -122,8 +126,9 @@ body {
 }
 
 .link {
-  color: #0b5ed7;
+  color: #DB5461;
   text-decoration: underline;
-  margin-left: 1.5rem;
+  margin-left: 1.5rem; 
   cursor: pointer;
+  font-size: .9rem;
 }

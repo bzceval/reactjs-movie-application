@@ -14,12 +14,13 @@ const Login = () => {
     signIn(email, password, navigate)
   }
 
-  return (
+  return ( 
     <div className='d-flex justify-content-center'>
-      <div className="form-image d-none d-md-block">
+      
+      <div className="form-image d-none d-lg-block">
         <img src={'https://picsum.photos/800/800'} alt="sample-movie" />
       </div>
-      <div className="register-form">
+      <div className="register-form col">
         
         <h1 className="form-title display-3">Login</h1>
         <form id="register" onSubmit={handleLogin}>
@@ -34,18 +35,18 @@ const Login = () => {
           <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id='password' placeholder='Enter Your Password' required/>
         </div>
 
-        <div className="link">Forgat Password</div>
+        <div className="link mt-4 mb-2">Forgat Password</div>
 
-        <div className="mb-3">
-          <input type="submit" className='btn btn-primary form-control' value="Login" />
+        <div className="mb-2">
+          <input type="submit" className='btn btn-dark form-control' value="Login" />
         </div>
 
         </form>
 
-        <div className="btn btn-primary form-control"> Continue with Google </div>
+        <div className="btn btn-dark form-control"> Continue with Google </div>
 
       </div>
-    </div>
+    </div> 
   )
 }
 
