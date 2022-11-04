@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { createUser } from '../auth/firebase'
 
 const Register = () => {
   const [firstName, setFirstName] = useState()
@@ -12,6 +13,8 @@ const Register = () => {
     // formumuzdan değerleri yakalayabildiğimizi kontrol ediyoruz, consoleye basıyoruz
     // sonrasında bu backende yani firebaseye göndereceğiz.
     // console.log(firstName, lastName)
+    // firebase signin new users method import
+    
   }
 
   return (
