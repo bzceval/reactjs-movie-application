@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {AuthContext} from "../context/AuthContextProvider"
 const Navbar = () => {
     //başlangıçta sahte kullanıcı yaptık çünkü firebase hala bağlı değil gerçek kullanıcım yok
-    const currentUser = false
+    // const currentUser = false
     // const currentUser = {displayName: "Mark Madison"}
     const navigate = useNavigate()
+    //context yapısını kurma
+    const {currentUser} = useContext(AuthContext)
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
