@@ -29,12 +29,12 @@ const Login = () => {
 
         <div className="mb-3"> 
           <label htmlFor="email" className='form-label'>Email</label>
-          <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id='email' placeholder='Enter Your Email' required/>
+          <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control p-2 ps-3" id='email' placeholder='Enter Your Email' required/>
         </div>
 
         <div className="mb-3"> 
           <label htmlFor="password" className='form-label'>Password</label>
-          <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id='password' placeholder='Enter Your Password' required/>
+          <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control p-2 ps-3" id='password' placeholder='Enter Your Password' required/>
         </div>
 
         <div className="link mt-4 mb-2" onClick={() => forgotPassword(email)}>Forgat Password</div>
