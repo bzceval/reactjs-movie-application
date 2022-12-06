@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {AuthContext} from "../context/AuthContextProvider"
+import {AuthContext} from "../context/AuthContextProvider";
+import { logOut } from "../auth/firebase";
+
 const Navbar = () => {
     //başlangıçta sahte kullanıcı yaptık çünkü firebase hala bağlı değil gerçek kullanıcım yok
     // const currentUser = false
@@ -21,7 +23,7 @@ const Navbar = () => {
           {currentUser ? (
             <>
             <h5 className="mb-0"> {currentUser.displayName}</h5>
-            <button className="ms-4 btn btn-outline-dark">Logout</button>
+            <button className="ms-4 btn btn-outline-dark" onClick={() => logOut()}>Logout</button>
             </>
           ) : (
             <>

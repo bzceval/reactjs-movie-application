@@ -63,6 +63,7 @@ body {
   border-radius: 5px;
   padding: 0.7rem;
   font-weight: bold;
+  color: #EFEAD8 !important;
 }
 
 .tag.green {

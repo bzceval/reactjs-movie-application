@@ -1,8 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContextProvider';
-import { toastWarnNotify } from '../helpers/ToastNotify';
+import { AuthContext } from '../context/AuthContextProvider'; 
 
 const IMG_API = 'https://image.tmdb.org/t/p/w1280';
 const defaultImage =
@@ -12,7 +11,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const setVoteClass = (vote) => {
+  const getVoteClass = (vote) => {
     if (vote > 8) {
       return 'green';
     } else if (vote >= 6) {
@@ -36,8 +35,8 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
       <div className="d-flex align-items-baseline justify-content-between p-3 text-white">
         <h5 className='movie-title text-center'>{title}</h5>
         {currentUser && (
-          <span className={`tag ${setVoteClass(setVoteClass)}`}>
-            {vote_average}
+          <span className={`tag ${getVoteClass(vote_average)}`}>
+            {vote_average.toFixed(1)}
           </span>
         )}
       </div>
