@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {signIn} from '../auth/firebase'
+import {forgotPassword, signIn, signUpProvider} from '../auth/firebase'
 import { useNavigate} from "react-router-dom"
 
 const Login = () => { 
@@ -10,10 +10,12 @@ const Login = () => {
   //submit olduğunda login input değerlerini yakalamak için kullandığım function
   const handleLogin = (e) => {
     e.preventDefault() 
-    console.log(email, password)
+    // console.log(email, password)
     signIn(email, password, navigate)
   }
-
+  const handleProviderLogin = () => {
+    signUpProvider(navigate);
+  };
   return ( 
     <div className='d-flex justify-content-center'>
       
@@ -35,7 +37,7 @@ const Login = () => {
           <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id='password' placeholder='Enter Your Password' required/>
         </div>
 
-        <div className="link mt-4 mb-2">Forgat Password</div>
+        <div className="link mt-4 mb-2" onClick={() => forgotPassword(email)}>Forgat Password</div>
 
         <div className="mb-2">
           <input type="submit" className='btn btn-dark form-control' value="Login" />
@@ -43,7 +45,7 @@ const Login = () => {
 
         </form>
 
-        <div className="btn btn-dark form-control"> Continue with Google </div>
+        <div className="btn btn-dark form-control" onClick={handleProviderLogin} > Continue with Google </div>
 
       </div>
     </div> 
