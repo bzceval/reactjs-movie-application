@@ -12,11 +12,13 @@ const Register = () => {
   //submit olduğunda input değerlerini yakalamak için kullandığım function
   const handleSubmit = (e) => {
     e.preventDefault()
+    const displayName = `${firstName} ${lastName}`;
+    console.log(firstName, lastName);
     // formumuzdan değerleri yakalayabildiğimizi kontrol ediyoruz, consoleye basıyoruz
     // sonrasında bu backende yani firebaseye göndereceğiz.
     // console.log(firstName, lastName)
     // firebase signin new users method import
-    createUser(email, password, navigate)
+    createUser(email, password, displayName, navigate)
     // navigate("/")
   }
 
