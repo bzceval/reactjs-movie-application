@@ -105,6 +105,18 @@ body {
 .navbar h3 {
   color: #F4EBE8;
 }  
+/* .auth-container{
+  height: calc(100vh - 83.59px - 60.8px);
+} */
+.form-image {
+  overflow: hidden;
+}
+.form-image img {
+  /* height: calc(100vh - 83.59px - 60.8px) !important;  */
+  background-position: center center;
+  object-fit: cover;
+  height: 100%;
+}
 .register-form {
   flex: 1;
   background-color: #EFEAD8;

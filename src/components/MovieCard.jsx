@@ -20,7 +20,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
       return 'red';
     }
   };
-  return (
+  return ( 
     <div
       className="movie shadow"
       onClick={() => {
@@ -45,7 +45,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
         <p>{overview.slice(0,120)}...</p>
         <button className='btn detail-btn'>Detail</button>
       </div>
-    </div>
+    </div> 
   );
 };
 

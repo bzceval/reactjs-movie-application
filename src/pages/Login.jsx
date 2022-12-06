@@ -17,10 +17,9 @@ const Login = () => {
     signUpProvider(navigate);
   };
   return ( 
-    <div className='d-flex justify-content-center'>
-      
-      <div className="form-image d-none d-lg-block">
-        <img src={'https://picsum.photos/800/800'} alt="sample-movie" />
+    <div className='auth-container d-flex justify-content-center'> 
+      <div className="form-image col d-none d-lg-block">
+        <img src={'https://images.unsplash.com/photo-1562329265-95a6d7a83440?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=80'} alt="sample-movie" />
       </div>
       <div className="register-form col">
         
@@ -48,7 +47,7 @@ const Login = () => {
         <div className="btn btn-dark form-control" onClick={handleProviderLogin} > Continue with Google </div>
 
       </div>
-    </div> 
+      </div> 
   )
 }
 
