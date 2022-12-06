@@ -1,7 +1,4 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
-
-# Project-006 : Movie App (RP-06)
+# Movie App 
 
 ## Description
 
@@ -48,7 +45,8 @@ SOLUTION
 
 ## Expected Outcome
 
-![Project 006 Snapshot](movie-app.gif)
+![movie](https://user-images.githubusercontent.com/100320309/205938548-9a7b93a0-9416-4870-b4a5-672e80c98633.gif)
+
 
 ## Objective
 
