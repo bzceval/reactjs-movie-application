@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { createUser } from '../auth/firebase'
 import { useNavigate} from "react-router-dom"
+import {signUpProvider} from '../auth/firebase'
 
 const Register = () => {
   const [firstName, setFirstName] = useState()
@@ -21,7 +22,9 @@ const Register = () => {
     createUser(email, password, displayName, navigate)
     // navigate("/")
   }
-
+  const handleProviderLogin = () => {
+    signUpProvider(navigate);
+  };
   return (
     <div className='d-flex justify-content-center'>
       <div className="form-image d-none d-lg-block">
@@ -57,7 +60,7 @@ const Register = () => {
         </div>
 
         </form>
-
+        <div className="btn btn-dark form-control" onClick={handleProviderLogin} > Continue with Google </div>
       </div>
     </div>
   )
