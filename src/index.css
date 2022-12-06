@@ -132,3 +132,26 @@ body {
   cursor: pointer;
   font-size: .9rem;
 }
+/*Movie Detail*/ 
+.row-detail {
+  display: flex;
+  align-items: center;
+}
+.row-detail img {
+  height: 80%;
+}
+.detail-card { 
+  font-family: "Poppins", "sans-serif";
+  line-height: 2.3rem;
+  border: none !important;
+} 
+.detail-card .title {
+  color: #DB5461;
+}
+.detail-card .card-title {
+  color: #DB5461;
+}
+.btn-back a {
+  color: #DB5461 !important;
+  font-size: 1.2rem; 
+}
