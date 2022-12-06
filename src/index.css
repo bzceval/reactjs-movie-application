@@ -154,4 +154,7 @@ body {
 .btn-back a {
   color: #DB5461 !important;
   font-size: 1.2rem; 
+} 
+.video-card iframe {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

@@ -38,6 +38,7 @@ const MovieDetail = () => {
 
   return (
     <div className="container my-5">
+      {videoKey && <VideoSection videoKey={videoKey} />}
       <div className="row row-detail py-5 g-4">
         <div className="col-md-5">
           <img
@@ -62,7 +63,7 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
-      {videoKey && <VideoSection videoKey={videoKey} />}
+      
     </div>
   );
 };
