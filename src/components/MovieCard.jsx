@@ -23,7 +23,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
   };
   return (
     <div
-      className="movie"
+      className="movie shadow"
       onClick={() => {
         navigate('/details/' + id);
         !currentUser && toastWarnNotify('Please log in to see detail');
@@ -34,8 +34,8 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
         src={poster_path ? IMG_API + poster_path : defaultImage}
         alt="movie-card"
       />
-      <div className="d-flex align-items-baseline justify-content-between p-1 text-white">
-        <h5>{title}</h5>
+      <div className="d-flex align-items-baseline justify-content-between p-3 text-white">
+        <h5 className='movie-title text-center'>{title}</h5>
         {currentUser && (
           <span className={`tag ${setVoteClass(setVoteClass)}`}>
             {vote_average}
@@ -44,7 +44,8 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
       </div>
       <div className="movie-over">
         <h2>Overview</h2>
-        <p>{overview}</p>
+        <p>{overview.slice(0,120)}...</p>
+        <button className='btn detail-btn'>Detail</button>
       </div>
     </div>
   );
