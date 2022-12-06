@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
 import {AuthContext} from '../context/AuthContextProvider'
 import { toastWarnNotify } from '../helpers/ToastNotify';
+import Load from '../utils/loading.gif'
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
@@ -45,17 +46,15 @@ const Main = () => {
       <form className="search" onSubmit={handleSubmit}>
         <input
           type="search"
-          className="search-input"
+          className="search-input ps-3 pt-4 pb-4"
           placeholder="Search a movie..."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className='btn btn-outline-danger mx-3'>Search</button>
       </form>
       <div className="d-flex justify-content-center flex-wrap">
         {loading ? (
-          <div className="spinner-border text-primary m-5" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
+          <img src={Load} alt="" />
         ) : (
           movies?.map((movie) => <MovieCard key={movie.id} {...movie} />)
         )}
