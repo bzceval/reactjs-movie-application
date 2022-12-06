@@ -22,8 +22,8 @@ const Navbar = () => {
             {/* rotalarını çizmem için navigate hookuna ihtiyacım olcek çünkü onClick yaptığımda başka sayfaya gidecek*/}
           {currentUser ? (
             <>
-            <h5 className="mb-0"> {currentUser.displayName}</h5>
-            <button className="ms-4 btn btn-outline-dark" onClick={() => logOut()}>Logout</button>
+            <h5 className="mb-0 text-light"> {currentUser.displayName}</h5>
+            <button className="ms-4 btn btn-outline-light" onClick={() => logOut()}>Logout</button>
             </>
           ) : (
             <>
