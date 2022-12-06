@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Main from '../pages/Main'
 import MovieDetails from '../pages/MovieDetails'
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const AppRouter = () => {
   return (
@@ -16,6 +17,7 @@ const AppRouter = () => {
     <Route path="/register" element={<Register/>}/>
     <Route path="/details/:id" element={<MovieDetails/>}/>
   </Routes>
+  <Footer />
   </BrowserRouter>
   )
 };
