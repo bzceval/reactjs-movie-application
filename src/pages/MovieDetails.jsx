@@ -44,7 +44,7 @@ const MovieDetail = () => {
           <img
             src={poster_path ? baseImageUrl + poster_path : defaultImage}
             className="img-fluid rounded-start shadow rounded"
-            alt="movie image"
+            alt="movie"
           />
         </div>
         <div className="col-md-7 d-flex flex-column">

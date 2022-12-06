@@ -25,8 +25,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
     <div
       className="movie shadow"
       onClick={() => {
-        navigate('/details/' + id);
-        !currentUser && toastWarnNotify('Please log in to see detail');
+        navigate('/details/' + id); 
       }}
     >
       <img
