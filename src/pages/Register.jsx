@@ -14,7 +14,6 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const displayName = `${firstName} ${lastName}`;
-    console.log(firstName, lastName);
     // formumuzdan değerleri yakalayabildiğimizi kontrol ediyoruz, consoleye basıyoruz
     // sonrasında bu backende yani firebaseye göndereceğiz.
     // console.log(firstName, lastName)

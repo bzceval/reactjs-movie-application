@@ -21,18 +21,12 @@ import {
 //* https://console.firebase.google.com/ => project settings
 //! firebase console settings bölümünden firebaseconfig ayarlarını al
 const firebaseConfig = {
-  // apiKey: process.env.REACT_APP_apiKey,
-  // authDomain: process.env.REACT_APP_authDomain,
-  // projectId: process.env.REACT_APP_projectId,
-  // storageBucket: process.env.REACT_APP_storageBucket,
-  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  // appId: process.env.REACT_APP_appId,
-  apiKey: "AIzaSyA4u-PWmvQA7cdNBgjqiF2qLZzsxaF9b40",
-  authDomain: "reactjs-movie-application.firebaseapp.com",
-  projectId: "reactjs-movie-application",
-  storageBucket: "reactjs-movie-application.firebasestorage.app",
-  messagingSenderId: "238397348237",
-  appId: "1:238397348237:web:c36e74f75253f1a9a345c4",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
@@ -70,7 +64,6 @@ export const signIn = async (email, password, navigate) => {
     navigate("/");
     toastSuccessNotify("Logged in successfully!");
     // sessionStorage.setItem('user', JSON.stringify(userCredential.user));
-    console.log(userCredential);
   } catch (err) {
     toastErrorNotify(err.message);
     console.log(err);
@@ -105,7 +98,6 @@ export const signUpProvider = (navigate) => {
   //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result);
       navigate("/");
       toastSuccessNotify("Logout successfully!");
     })

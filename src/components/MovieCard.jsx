@@ -10,8 +10,6 @@ const defaultImage =
 const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log('id', id);
-  
 
   const getVoteClass = (vote) => {
     if (vote > 8) {

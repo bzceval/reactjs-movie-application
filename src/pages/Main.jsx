@@ -6,7 +6,8 @@ import { AuthContext } from "../context/AuthContextProvider";
 import { toastWarnNotify } from "../helpers/ToastNotify";
 import Load from "../utils/loading.gif";
 
-const API_KEY = "eb928bf9ff2cf207195e2e03011a1a26";
+//const API_KEY = "eb928bf9ff2cf207195e2e03011a1a26";
+const API_KEY = process.env.REACT_API_KEY;
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 

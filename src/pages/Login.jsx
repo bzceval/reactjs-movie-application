@@ -10,7 +10,6 @@ const Login = () => {
   //submit olduğunda login input değerlerini yakalamak için kullandığım function
   const handleLogin = (e) => {
     e.preventDefault();
-    // console.log(email, password)
     signIn(email, password, navigate);
   };
   const handleProviderLogin = () => {
