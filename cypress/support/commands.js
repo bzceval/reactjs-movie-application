@@ -53,3 +53,10 @@ Cypress.Commands.add("home", () => {
     .click({ force: true });
   cy.url().should("include", "/detail");
 });
+
+Cypress.Commands.add("detail", () => {
+  cy.get("[data-test='movieDetailImg']").should("be.visible");
+  cy.get("[data-test='releaseDate']").should("be.visible");
+  cy.get("[data-test='movieDetailTitle']").should("be.visible");
+  cy.get("[data-test='movieDetailOverview']").should("be.visible");
+});
