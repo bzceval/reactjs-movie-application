@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", () => {
+  cy.url().should("include", "/");
+  cy.get("[data-test='logo']")
+    .should("be.visible")
+    .contains("Ninjas Movie App");
+  cy.get("[data-test='login-button']").click();
+  cy.url().should("include", "/login");
+  cy.get("[data-test='login-header']").should("be.visible").contains("Login");
+  cy.get("[data-test='email']")
+    .should("be.visible")
+    .type("busraaceval@gmail.com");
+  cy.get("[data-test='password']").should("be.visible").type("cvl2727.");
+  cy.get("[data-test='loginSbmtBtn']").click();
+  cy.get("[data-test='loginDisplayName']")
+    .should("be.visible")
+    .contains("Busra Ceval");
+});

@@ -10,6 +10,8 @@ const defaultImage =
 const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log('id', id);
+  
 
   const getVoteClass = (vote) => {
     if (vote > 8) {
@@ -31,9 +33,10 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
         loading="lazy"
         src={poster_path ? IMG_API + poster_path : defaultImage}
         alt="movie-card"
+        data-test="movieCardImg"
       />
       <div className="d-flex align-items-baseline justify-content-between p-3 text-white">
-        <h5 className='movie-title text-center'>{title}</h5>
+        <h5 className='movie-title text-center' data-test="movieCardTitle">{title}</h5>
         {currentUser && (
           <span className={`tag ${getVoteClass(vote_average)}`}>
             {vote_average.toFixed(1)}
@@ -43,7 +46,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
       <div className="movie-over">
         <h2>Overview</h2>
         <p>{overview.slice(0,120)}...</p>
-        <button className='btn detail-btn'>Detail</button>
+        <button className='btn detail-btn' data-test="movieDetailBtn">Detail</button>
       </div>
     </div> 
   );

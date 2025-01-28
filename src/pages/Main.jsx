@@ -46,11 +46,12 @@ const Main = () => {
       <form className="search" onSubmit={handleSubmit}>
         <input
           type="search"
-          className="search-input ps-3 pt-4 pb-4" 
+          className="search-input ps-3 pt-4 pb-4"
           placeholder="Search a movie..."
           onChange={(e) => setSearchTerm(e.target.value)}
+          data-test="searchBar"
         />
-        <button type="submit" className="btn btn-outline-danger mx-3">
+        <button type="submit" className="btn btn-outline-danger mx-3" data-test="searchBtn">
           Search
         </button>
       </form>
