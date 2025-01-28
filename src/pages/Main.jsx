@@ -1,19 +1,19 @@
-import React, { useContext, useState } from 'react';
-import axios from 'axios';
-import { useEffect } from 'react';
-import MovieCard from '../components/MovieCard';
-import {AuthContext} from '../context/AuthContextProvider'
-import { toastWarnNotify } from '../helpers/ToastNotify';
-import Load from '../utils/loading.gif'
+import React, { useContext, useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import MovieCard from "../components/MovieCard";
+import { AuthContext } from "../context/AuthContextProvider";
+import { toastWarnNotify } from "../helpers/ToastNotify";
+import Load from "../utils/loading.gif";
 
-const API_KEY = process.env.REACT_APP_TMDB_KEY;
+const API_KEY = "eb928bf9ff2cf207195e2e03011a1a26";
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -34,10 +34,10 @@ const Main = () => {
     if (searchTerm && currentUser) {
       getMovies(SEARCH_API + searchTerm);
     } else if (!currentUser) {
-      toastWarnNotify('Please log in to search a movie');
+      toastWarnNotify("Please log in to search a movie");
       // alert("Please log in to search a movie");
     } else {
-      toastWarnNotify('Please enter a text');
+      toastWarnNotify("Please enter a text");
       // alert("Please enter a text");
     }
   };
@@ -46,11 +46,13 @@ const Main = () => {
       <form className="search" onSubmit={handleSubmit}>
         <input
           type="search"
-          className="search-input ps-3 pt-4 pb-4"
+          className="search-input ps-3 pt-4 pb-4" 
           placeholder="Search a movie..."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit" className='btn btn-outline-danger mx-3'>Search</button>
+        <button type="submit" className="btn btn-outline-danger mx-3">
+          Search
+        </button>
       </form>
       <div className="d-flex justify-content-center flex-wrap">
         {loading ? (

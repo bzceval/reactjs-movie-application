@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -9,24 +9,30 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
-} from 'firebase/auth';
+} from "firebase/auth";
 import {
   toastErrorNotify,
   toastSuccessNotify,
   toastWarnNotify,
-} from '../helpers/ToastNotify';
+} from "../helpers/ToastNotify";
 
 // TODO: Replace the following with your app's Firebase project configuration
 //* https://firebase.google.com/docs/auth/web/start
 //* https://console.firebase.google.com/ => project settings
 //! firebase console settings bölümünden firebaseconfig ayarlarını al
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+  // apiKey: process.env.REACT_APP_apiKey,
+  // authDomain: process.env.REACT_APP_authDomain,
+  // projectId: process.env.REACT_APP_projectId,
+  // storageBucket: process.env.REACT_APP_storageBucket,
+  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  // appId: process.env.REACT_APP_appId,
+  apiKey: "AIzaSyA4u-PWmvQA7cdNBgjqiF2qLZzsxaF9b40",
+  authDomain: "reactjs-movie-application.firebaseapp.com",
+  projectId: "reactjs-movie-application",
+  storageBucket: "reactjs-movie-application.firebasestorage.app",
+  messagingSenderId: "238397348237",
+  appId: "1:238397348237:web:c36e74f75253f1a9a345c4",
 };
 
 // Initialize Firebase
@@ -38,17 +44,13 @@ const auth = getAuth(app);
 export const createUser = async (email, password, navigate, displayName) => {
   //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
   try {
-    await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    await createUserWithEmailAndPassword(auth, email, password);
     //? kullanıcı profilini güncellemek için kullanılan firebase metodu
     await updateProfile(auth.currentUser, {
       displayName: displayName,
     });
-    toastSuccessNotify('Registered successfully!');
-    navigate('/');
+    toastSuccessNotify("Registered successfully!");
+    navigate("/");
   } catch (err) {
     toastErrorNotify(err.message);
   }
@@ -65,8 +67,8 @@ export const signIn = async (email, password, navigate) => {
       email,
       password
     );
-    navigate('/');
-    toastSuccessNotify('Logged in successfully!');
+    navigate("/");
+    toastSuccessNotify("Logged in successfully!");
     // sessionStorage.setItem('user', JSON.stringify(userCredential.user));
     console.log(userCredential);
   } catch (err) {
@@ -89,7 +91,7 @@ export const userObserver = (setCurrentUser) => {
 
 export const logOut = () => {
   signOut(auth);
-  toastSuccessNotify('Logout successfully!');
+  toastSuccessNotify("Logout successfully!");
 };
 
 //* https://console.firebase.google.com/
@@ -104,8 +106,8 @@ export const signUpProvider = (navigate) => {
   signInWithPopup(auth, provider)
     .then((result) => {
       console.log(result);
-      navigate('/');
-      toastSuccessNotify('Logout successfully!');
+      navigate("/");
+      toastSuccessNotify("Logout successfully!");
     })
     .catch((error) => {
       // Handle Errors here.
@@ -118,7 +120,7 @@ export const forgotPassword = (email) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {
       // Password reset email sent!
-      toastWarnNotify('Please check your mail box!');
+      toastWarnNotify("Please check your mail box!");
       // alert("Please check your mail box!");
     })
     .catch((err) => {
