@@ -64,6 +64,7 @@ export const signIn = async (email, password, navigate) => {
     navigate("/");
     toastSuccessNotify("Logged in successfully!");
     // sessionStorage.setItem('user', JSON.stringify(userCredential.user));
+    console.log(userCredential);
   } catch (err) {
     toastErrorNotify(err.message);
     console.log(err);
