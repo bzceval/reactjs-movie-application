@@ -45,15 +45,16 @@ const MovieDetail = () => {
             src={poster_path ? baseImageUrl + poster_path : defaultImage}
             className="img-fluid rounded-start shadow rounded"
             alt="movie"
+            data-test='movieDetailImg'
           />
         </div>
         <div className="col-md-7 d-flex flex-column">
           <div className="card detail-card shadow pb-5">
-            <p className="text-end me-4 mt-5">Release Date: <span> {release_date} </span> </p>
+            <p className="text-end me-4 mt-5" data-test='releaseDate'>Release Date: <span> {release_date} </span> </p>
             <div className="card-body pe-5 pt-4 ps-5">
-              <h1 className="text-center">{title}</h1>
+              <h1 className="text-center" data-test='movieDetailTitle'>{title}</h1>
               <h4 className="card-title mt-5">Overview</h4>
-              <p className="card-text">{overview}</p>
+              <p className="card-text" data-test='movieDetailOverview'>{overview}</p>
             </div>
             <div className="sub-title text-end me-4">
               <p className="mb-1">Rate : {vote_average}</p>
