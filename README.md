@@ -61,6 +61,8 @@ Build a Movie App using ReactJS.
 - JS
 
 - ReactJS
+  
+- Cypress
 
 ### At the end of the project, students will be able to;
 
